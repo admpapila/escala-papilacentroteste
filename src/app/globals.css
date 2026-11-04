@@ -1,10 +1,13 @@
 @import "tailwindcss";
 
-/* Cores vêm de src/config/identidade.ts e são aplicadas no layout. */
+/* Cores vêm de src/config/identidade.ts e são aplicadas no layout.
+   Estilo rústico: laranja escuro (telha), bege claro (papel kraft) e marrom café. */
 :root {
-  --cor-principal: #1f3a5f;
-  --cor-secundaria: #f4f1ea;
-  --cor-texto: #1a1a1a;
+  --cor-principal: #b4541a;
+  --cor-secundaria: #f5ebdc;
+  --cor-texto: #3b2a1e;
+  --cor-cartao: #fffaf2;
+  --cor-borda: #e0cfb6;
 }
 
 @theme inline {
@@ -20,20 +23,40 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Títulos com fonte serifada clássica, para o toque rústico. */
+h1,
+h2,
+h3,
+.titulo-rustico {
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: 0.01em;
+}
+
 /* Botões e campos grandes, pensados para o celular. */
 .botao {
   @apply inline-flex items-center justify-center rounded-xl px-4 py-3 text-base font-semibold text-white shadow-sm active:scale-[0.98] disabled:opacity-50;
   background: var(--cor-principal);
 }
+.botao:active {
+  filter: brightness(0.9);
+}
 .botao-secundario {
-  @apply inline-flex items-center justify-center rounded-xl border px-4 py-3 text-base font-semibold shadow-sm active:scale-[0.98] disabled:opacity-50;
+  @apply inline-flex items-center justify-center rounded-xl border-2 px-4 py-3 text-base font-semibold shadow-sm active:scale-[0.98] disabled:opacity-50;
   border-color: var(--cor-principal);
   color: var(--cor-principal);
-  background: white;
+  background: var(--cor-cartao);
 }
 .campo {
-  @apply w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-base outline-none focus:border-neutral-500;
+  @apply w-full rounded-xl border px-4 py-3 text-base outline-none;
+  border-color: var(--cor-borda);
+  background: var(--cor-cartao);
+  color: var(--cor-texto);
+}
+.campo:focus {
+  border-color: var(--cor-principal);
 }
 .cartao {
-  @apply rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm;
+  @apply rounded-2xl border p-4 shadow-sm;
+  border-color: var(--cor-borda);
+  background: var(--cor-cartao);
 }

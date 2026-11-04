@@ -11,19 +11,20 @@ export function Cabecalho() {
   return (
     <header
       className="sticky top-0 z-10 text-white shadow"
-      style={{ background: "var(--cor-principal)" }}
+      style={{ background: "var(--cor-principal)", borderBottom: "4px solid rgba(0,0,0,0.15)" }}
     >
       <div className="mx-auto flex max-w-3xl items-center gap-3 px-4 py-3">
         {identidade.logo ? (
           <Image
             src={identidade.logo}
             alt={identidade.nome}
-            width={36}
-            height={36}
-            className="h-9 w-9 rounded-md bg-white object-contain p-0.5"
+            width={48}
+            height={48}
+            priority
+            className="h-12 w-12 rounded-full border-2 border-white/70 bg-[#fffaf2] object-contain p-1 shadow-sm"
           />
         ) : null}
-        <span className="text-lg font-bold">{identidade.nome}</span>
+        <span className="titulo-rustico text-xl font-bold leading-tight">{identidade.nome}</span>
       </div>
       <nav className="mx-auto flex max-w-3xl gap-1 overflow-x-auto px-2 pb-2">
         {menu.map((item) => {

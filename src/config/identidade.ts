@@ -4,10 +4,10 @@
 
 export const identidade = {
   nome: "Papila Deli - Centro",
-  // Cor dos botões e do cabeçalho (formato #RRGGBB)
-  corPrincipal: "#1F3A5F",
-  // Cor de fundo das páginas
-  corSecundaria: "#F4F1EA",
+  // Cor dos botões e do cabeçalho (formato #RRGGBB) · laranja escuro
+  corPrincipal: "#B4541A",
+  // Cor de fundo das páginas (bege claro)
+  corSecundaria: "#F5EBDC",
   // Caminho do logo dentro da pasta public, ou null
-  logo: null as string | null,
+  logo: "/logo.png" as string | null,
 };

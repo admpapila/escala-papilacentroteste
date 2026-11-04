@@ -6,6 +6,7 @@ import { Cabecalho } from "@/components/Cabecalho";
 export const metadata: Metadata = {
   title: `Escala · ${identidade.nome}`,
   description: "Sistema de escala de funcionários",
+  icons: identidade.logo ? { icon: identidade.logo, apple: identidade.logo } : undefined,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -20,7 +21,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col">
         <Cabecalho />
         <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-5">{children}</main>
-        <footer className="px-4 py-6 text-center text-xs text-neutral-500">
+        <footer className="px-4 py-6 text-center text-xs text-[#7a6250]">
           {identidade.nome} · sistema de escala
         </footer>
       </body>
